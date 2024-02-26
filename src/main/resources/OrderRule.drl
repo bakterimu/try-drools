@@ -1,0 +1,9 @@
+import com.drul.spring.Order;
+import java.util.*;
+
+rule "BRI"
+	when
+		$order: Order(card == "BRI", price > 10000);
+	then
+		$order.setDiscount(10);
+end
